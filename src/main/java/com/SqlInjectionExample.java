@@ -16,7 +16,8 @@ public class SqlInjectionExample {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=myuser&password=mypass");
 
             // Unsafe SQL query constructed by concatenating strings.
-            String query = "SELECT * FROM users WHERE user = '" + user + "' AND password = '" + pass + "'";
+            // String query = "SELECT * FROM users WHERE user = '" + user + "' AND password = '" + pass + "'";
+            String query = "SELECT * FROM users";
 
             stmt = conn.createStatement();
             stmt.executeQuery(query);
